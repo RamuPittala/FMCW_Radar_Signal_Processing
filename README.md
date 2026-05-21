@@ -5,6 +5,9 @@
 This repository contains the work which attempts to solve 2D-positioning of human being using an open source FMCW radar data. It also highlights the challenges with current approach and future possible directions.
 The approach here is to explore usage of real time geometry to solve positioning of the objects, which has been inspired from the work "3D Tracking via Body Radio Reflections" (link: https://witrack.csail.mit.edu/witrack-paper.pdf). In the mentioned paper, researchers use elliptic equations (transmitter and receiver as focii of an ellipse with time delay from an object as distance) to solve for the positioning of the object. I request you to go through the paper as it has amazing work. 
 
+## Why do we need a different approach?
+When we look into the algorithms of angle estimation, it depends on FFT based estimation techniques. FFT itself has it's own limitations interms of resolution. To resolve closeby peaks in range-doppler map
+
 ## What I am doing here?
 In the mentioned paper, researchers used customized setup (T-shape, ends are receivers and contact point as transmitter) to point the directed radiation and solving for positioning. Here we will be using already available open source data, where typical setup is used in real world (like MxN array of transmitters and receivers to do virtual beamforming). Here an ADC data has been used whose configuration details are provided below.
 radar_configs = {
@@ -32,6 +35,8 @@ To highlight the activity region in range-time map, we used 1D-CFAR thresholding
 <img width="1920" height="975" alt="2019_05_29_pbms007_CFAR_detections" src="https://github.com/user-attachments/assets/79d0e749-bcdb-4542-8e24-3e96886fce02" />
 We can clearly see those two curves reflect two person's activities. We want to get seperate each of them into continuous individual tracks so that we can get distance estimation for each person at any time. But the challenges here are: 1. Some outliers are there instead of continuous track detection points. We need get rid of them first. 2. Here's the main challenge i.e., we need to sepearate them into individual tracks. Sometimes, the track can discontinue in between as well (PFA picture below). And multiple tracks will will be vanishing in between.
 <img width="1920" height="975" alt="2019_04_30_pcms001_cfar_detections" src="https://github.com/user-attachments/assets/232faed7-5908-422a-a09e-7fed95a30149" />
+
+## What I did?
 
 
 
