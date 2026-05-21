@@ -30,7 +30,9 @@ And corresponding one sample optical image (from sequency of many images) is sho
 Entire sequence of images are provided in a data folder and corresponding radar data are also provided in another corresponding subfolder. So, above range-time map reflects the activities the mentioned objects in a sequency manner. 
 To highlight the activity region in range-time map, we used 1D-CFAR thresholding. We had done it for each column of range-time map. The result can be seen below.
 <img width="1920" height="975" alt="2019_05_29_pbms007_CFAR_detections" src="https://github.com/user-attachments/assets/79d0e749-bcdb-4542-8e24-3e96886fce02" />
-We can clearly see those two curves reflect two person's activities. We want to get seperate each of them into continuous individual tracks so that we can get distance estimation for each person at any time. 
+We can clearly see those two curves reflect two person's activities. We want to get seperate each of them into continuous individual tracks so that we can get distance estimation for each person at any time. But the challenges here are: 1. Some outliers are there instead of continuous track detection points. We need get rid of them first. 2. Here's the main challenge i.e., we need to sepearate them into individual tracks. Sometimes, the track can discontinue in between as well (PFA picture below). And multiple tracks will will be vanishing in between.
+<img width="1920" height="975" alt="2019_04_30_pcms001_cfar_detections" src="https://github.com/user-attachments/assets/232faed7-5908-422a-a09e-7fed95a30149" />
+
 
 
 
