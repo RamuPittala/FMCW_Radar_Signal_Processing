@@ -27,7 +27,11 @@ What we do in general is, apply FFT on one radar frame data to get range FFT. An
 <img width="1920" height="975" alt="2019_05_29_pbms007_range_over_time" src="https://github.com/user-attachments/assets/f9053489-9caa-41b6-b4f6-3bbf5f451d0c" /> 
 And corresponding one sample optical image (from sequency of many images) is shown below. It contain one pedestrian and one cyclist performing walking and cycling activities simultaneously. 
 <img width="1440" height="1080" alt="image" src="https://github.com/user-attachments/assets/32e495ef-0033-4d32-aaef-a28ed4bc5e7b" /> 
-Entire sequence of images are provided in a data folder and corresponding radar data are also provided in another subfolder.
+Entire sequence of images are provided in a data folder and corresponding radar data are also provided in another corresponding subfolder. So, above range-time map reflects the activities the mentioned objects in a sequency manner. 
+To highlight the activity region in range-time map, we used 1D-CFAR thresholding. We had done it for each column of range-time map. The result can be seen below.
+<img width="1920" height="975" alt="2019_05_29_pbms007_CFAR_detections" src="https://github.com/user-attachments/assets/79d0e749-bcdb-4542-8e24-3e96886fce02" />
+We can clearly see those two curves reflect two person's activities. We want to get seperate each of them into continuous individual tracks so that we can get distance estimation for each person at any time. 
+
 
 
 
